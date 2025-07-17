@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Healing Testimony</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center px-4">
+  <div class="w-full max-w-3xl bg-white rounded-lg shadow-md p-8">
+    <h2 class="text-2xl font-bold mb-6 text-gray-800">Healing Testimony Form</h2>
+
+    <form id="testimonyForm" class="space-y-5">
+      <!-- NAME -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Name</label>
+        <input type="text" id="name" required class="mt-1 w-full border border-gray-300 rounded-md p-2" />
+      </div>
+
+      <!-- DATE -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Date of Capture</label>
+        <input type="date" id="date" required class="mt-1 w-full border border-gray-300 rounded-md p-2" />
+      </div>
+
+      <!-- CONTACT -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Phone Contact</label>
+        <input type="tel" id="contact" required class="mt-1 w-full border border-gray-300 rounded-md p-2" />
+      </div>
+
+      <!-- NEXT OF KIN -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Next of Kin</label>
+        <input type="text" id="nextOfKin" required class="mt-1 w-full border border-gray-300 rounded-md p-2" />
+      </div>
+
+      <!-- NEXT OF KIN CONTACT -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Next of Kin's Contact</label>
+        <input type="tel" id="nextOfKinContact" required class="mt-1 w-full border border-gray-300 rounded-md p-2" />
+      </div>
+
+      <!-- RESIDENCE -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Area of Residence</label>
+        <input type="text" id="residence" required class="mt-1 w-full border border-gray-300 rounded-md p-2" />
+      </div>
+
+      <!-- PROBLEM -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">What was your problem?</label>
+        <textarea id="problem" rows="3" required class="mt-1 w-full border border-gray-300 rounded-md p-2"></textarea>
+      </div>
+
+      <!-- DURATION -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">How long did it last?</label>
+        <input type="text" id="duration" required class="mt-1 w-full border border-gray-300 rounded-md p-2" />
+      </div>
+
+      <!-- FEELING NOW -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">How do you feel now?</label>
+        <select id="currentFeeling" required class="mt-1 w-full border border-gray-300 rounded-md p-2">
+          <option value="">-- Select --</option>
+          <option value="completely fine">Completely fine</option>
+          <option value="pain has reduced">Pain has reduced</option>
+          <option value="no change yet">No change yet</option>
+        </select>
+      </div>
+
+      <!-- HEALING DESCRIPTION -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Mode of healing / When did the miracle happen and what were you doing?</label>
+        <textarea id="healingDescription" rows="3" required class="mt-1 w-full border border-gray-300 rounded-md p-2"></textarea>
+      </div>
+
+      <!-- OFFICIAL NAME -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Name of Official</label>
+        <input type="text" id="officialName" required class="mt-1 w-full border border-gray-300 rounded-md p-2" />
+      </div>
+
+      <!-- OFFICIAL NUMBER -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Number of Official</label>
+        <input type="text" id="officialNumber" required class="mt-1 w-full border border-gray-300 rounded-md p-2" />
+      </div>
+
+      <!-- CONSENT -->
+      <div class="flex items-start space-x-2">
+        <input type="checkbox" id="consent" required class="mt-1">
+        <label for="consent" class="text-sm text-gray-700 select-none">
+          I consent to the collection and use of my testimony for ministry purposes.
+        </label>
+      </div>
+
+      <!-- VOICE TESTIMONY -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Healing Testimony (voice-to-text)</label>
+        <textarea id="testimony" rows="5" required class="mt-1 w-full border border-gray-300 rounded-md p-2"></textarea>
+      </div>
+
+      <!-- AUDIO BUTTONS -->
+      <div class="my-4">
+          <canvas id="waveform" width="600" height="100" class="w-full h-24 bg-black rounded-md shadow-md"></canvas>
+        <p id="timer" class="text-white font-mono mt-2">⏱️ 00:00</p>
+      </div>
+
+      <div class="flex gap-4 mt-4">
+        <button id="startRecording" class="bg-green-600 text-white px-4 py-2 rounded">🎙️ Start Recording</button>
+        <button id="stopRecording" class="bg-red-600 text-white px-4 py-2 rounded" disabled>🛑 Stop Recording</button>
+        <a id="downloadLink" class="hidden text-blue-600 underline ml-4">⬇️ Download Audio</a>
+      </div>
+      <p id="recordingStatus" class="mt-2 text-sm text-yellow-400"></p>
+
+      <!-- SUBMIT -->
+      <div>
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md">
+          Submit Testimony
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

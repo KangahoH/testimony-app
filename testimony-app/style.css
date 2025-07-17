@@ -1,0 +1,16 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 2rem;
+  background-color: #f0f2f5;
+}
+label, input, textarea, button {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+button {
+  width: auto;
+}
+.recording {
+  color: red;
+}
